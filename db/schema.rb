@@ -41,18 +41,18 @@ ActiveRecord::Schema.define(version: 2021_08_24_215009) do
   end
 
   create_table "viewing_parties", force: :cascade do |t|
-    t.bigint "host_id"
+    t.bigint "organizer_id"
     t.integer "duration"
     t.date "date"
     t.time "start_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["host_id"], name: "index_viewing_parties_on_host_id"
+    t.index ["organizer_id"], name: "index_viewing_parties_on_organizer_id"
   end
 
   add_foreign_key "friends", "users"
   add_foreign_key "friends", "users", column: "friend_id"
   add_foreign_key "guests", "users", column: "guest_id"
   add_foreign_key "guests", "viewing_parties", column: "party_id"
-  add_foreign_key "viewing_parties", "users", column: "host_id"
+  add_foreign_key "viewing_parties", "users", column: "organizer_id"
 end
