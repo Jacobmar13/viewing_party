@@ -16,7 +16,7 @@ RSpec.describe 'new user registration' do
     it 'can be used' do
 
       visit new_user_path
-# save_and_open_page
+      
       fill_in 'user[email]', with: 'hello@example.com'
       fill_in 'user[password]', with: '1234'
       fill_in 'user[password_confirmation]', with: '1234'
@@ -29,7 +29,7 @@ RSpec.describe 'new user registration' do
 
     it 'can test sad path for non matching passwords' do
       visit new_user_path
-      # save_and_open_page
+
       fill_in 'user[email]', with: 'hello@example.com'
       fill_in 'user[password]', with: '1234'
       fill_in 'user[password_confirmation]', with: 'abcd'
