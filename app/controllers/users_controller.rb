@@ -7,18 +7,16 @@ class UsersController < ApplicationController
     user = user_params
     user[:email] = user[:email].downcase
     if user_params[:password] == user_params[:password_confirmation]
-      new_user = User.create(user_params)
-      flash[:success] = "Registration successful. Please log in!"
+      User.create(user_params)
+      flash[:success] = 'Registration successful. Please log in!'
       redirect_to root_path
     else
-      flash[:error] = "Passwords do not match!"
+      flash[:error] = 'Passwords do not match!'
       redirect_to new_user_path
     end
   end
 
-  def show
-    binding.pry
-  end
+  def show; end
 
   def authenticate
     redirect_to root_path
