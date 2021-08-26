@@ -1,0 +1,10 @@
+<h1>Welcome to Viewing Party</h1>
+<h3>App For Scheduling Viewing Parties</h3>
+<%= form_with url: signin_path, method: :post, local: true do |form| %>
+  <%= form.label :email, "Email: " %>
+  <%= form.text_field :email %>
+  <%= form.label :password, "Password: " %>
+  <%= form.text_field :password %>
+  <%= form.submit "Sign In" %>
+<% end %>
+<%= link_to "New Here? Register Here", new_user_path %>
