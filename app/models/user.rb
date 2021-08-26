@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  validates :email, uniqueness: true, presence: true
+  validates :password, presence: true
+  
   has_many :friends, dependent: nil
   has_many :friends, foreign_key: 'friend_id', inverse_of: :user, dependent: nil
   has_many :viewing_parties, foreign_key: 'organizer_id', inverse_of: :user, dependent: nil
