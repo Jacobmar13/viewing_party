@@ -19,9 +19,10 @@ class UsersController < ApplicationController
   end
 
   def show
+    binding.pry
     @user = current_user
     if session[:user_id] =! params[:id]
-      render file: 'public/404'
+      render file: 'public/404', status: :not_found
     else
     end
   end
