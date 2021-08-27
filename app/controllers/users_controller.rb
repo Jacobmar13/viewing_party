@@ -10,10 +10,10 @@ class UsersController < ApplicationController
     user[:email] = user[:email].downcase
     if user_params[:password] == user_params[:password_confirmation]
       User.create(user_params)
-      flash[:success] = "Registration successful. Please log in!"
+      flash[:success] = 'Registration successful. Please log in!'
       redirect_to root_path
     else
-      flash[:error] = "Passwords do not match!"
+      flash[:error] = 'Passwords do not match!'
       redirect_to new_user_path
     end
   end
@@ -21,10 +21,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @friends = @user.friend_info
-    if session[:user_id] == params[:id].to_i
-    else
-      render file: 'public/404', status: :not_found
-    end
+    render file: 'public/404', status: :not_found if session[:user_id] != params[:id].to_i
   end
 
   private

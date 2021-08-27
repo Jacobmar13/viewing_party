@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_secure_password
 
   def friend_info
-    self.friends.map do |friend|
+    friends.map do |friend|
       User.where(id: friend.friend_id)
     end.flatten
   end

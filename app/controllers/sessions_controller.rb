@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
       flash[:success] = "Welcome, #{user.email}!"
       redirect_to user_path(user.id)
     else
-      flash[:error] = "Credentials are bad."
+      flash[:error] = 'Credentials are bad.'
       redirect_to root_path
     end
   end
