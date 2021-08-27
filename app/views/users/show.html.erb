@@ -1,1 +1,17 @@
-<h1><%= "Welcome #{@user.email}!"  %></h1>
+<h1><%= "Welcome #{@user.email}!" %></h1>
+<br>
+<br>
+<h2>Friends</h2>
+<%= form_with url: friends_path, method: :post, local: true do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <%= f.submit 'Add Friend' %>
+<% end %>
+<% if @user.friends.empty? %>
+  <p><%= "You currently have no friends" %></p>
+  <% else %>
+    <% @user.friends.each do |friend| %>
+      <%= friend.email %>
+    <% end %>
+<% end %>
