@@ -20,6 +20,10 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    if session[:user_id] =! params[:id]
+      render file: 'public/404'
+    else
+    end
   end
 
   def authenticate
