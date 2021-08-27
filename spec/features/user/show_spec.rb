@@ -11,8 +11,11 @@ RSpec.describe 'user show page' do
   describe 'as authenticated user' do
     it 'can have a dashboard page' do
       user = User.create(email: 'hello@example.com', password: '1234')
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-      visit user_path(user.id)
+
+      visit root_path
+      fill_in 'email', with: 'hello@example.com'
+      fill_in 'password', with: '1234'
+      click_on 'Sign In'
 
       expect(page).to have_content("Welcome #{user.email}!")
     end
@@ -24,10 +27,8 @@ RSpec.describe 'user show page' do
       user_2 = User.create(email: 'goodbye@example.com', password: 'abcd')
 
       visit root_path
-
       fill_in 'email', with: 'hello@example.com'
       fill_in 'password', with: '1234'
-
       click_on 'Sign In'
 
       expect(current_path).to eq(user_path(user.id))
@@ -41,12 +42,16 @@ RSpec.describe 'user show page' do
   describe 'has friends section' do
     it 'displays string when user has no friends' do
       user = User.create(email: 'hello@example.com', password: '1234')
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-      visit user_path(user.id)
+
+      visit root_path
+      fill_in 'email', with: 'hello@example.com'
+      fill_in 'password', with: '1234'
+      click_on 'Sign In'
+
       expect(page).to have_content("You currently have no friends")
     end
 
-    xit "displays friend's emails if friends are added" do
+    it "displays friend's emails if friends are added" do
       user = User.create(email: 'hello@example.com', password: '1234')
       user_2 = User.create(email: 'goodbye@example.com', password: 'abcd')
       user_3 = User.create(email: 'thankyou@example.com', password: '4321')
@@ -54,9 +59,12 @@ RSpec.describe 'user show page' do
       Friend.create(user_id: user.id, friend_id: user_2.id)
       Friend.create(user_id: user.id, friend_id: user_3.id)
 
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit user_path(user.id)
+      visit root_path
+      fill_in 'email', with: 'hello@example.com'
+      fill_in 'password', with: '1234'
+      click_on 'Sign In'
 
       expect(page).to have_content(user_2.email)
       expect(page).to have_content(user_3.email)
@@ -67,9 +75,10 @@ RSpec.describe 'user show page' do
       user_2 = User.create(email: 'goodbye@example.com', password: 'abcd')
       user_3 = User.create(email: 'thankyou@example.com', password: '4321')
 
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-
-      visit user_path(user.id)
+      visit root_path
+      fill_in 'email', with: 'hello@example.com'
+      fill_in 'password', with: '1234'
+      click_on 'Sign In'
 
       fill_in :email, with: user_2.email
       click_on 'Add Friend'
