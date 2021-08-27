@@ -19,11 +19,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    binding.pry
     @user = current_user
-    if session[:user_id] =! params[:id]
-      render file: 'public/404', status: :not_found
+    @friends = @user.friend_info
+    if session[:user_id] == params[:id].to_i
     else
+      render file: 'public/404', status: :not_found
     end
   end
 
