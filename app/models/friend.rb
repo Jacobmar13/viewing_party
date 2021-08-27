@@ -1,4 +1,4 @@
 class Friend < ApplicationRecord
   belongs_to :user
-  belongs_to :user, foreign_key: 'friend_id', inverse_of: :friends
+  belongs_to :each_friend, foreign_key: 'friend_id', class_name: 'User', inverse_of: :friends
 end

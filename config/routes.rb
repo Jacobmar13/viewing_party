@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   root "welcome#index"
   resources :users
-  post '/signin', to: 'users#authenticate'
+  post '/signin', to: 'sessions#create'
+  resources :friends
 end
