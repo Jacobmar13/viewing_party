@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @friends = @user.friend_info
-    render file: 'public/404', status: :not_found if session[:user_id] != params[:id].to_i
+    render file: 'public/404', status: :not_found if @user.id != params[:id].to_i
   end
 
   private
