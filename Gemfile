@@ -22,6 +22,7 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   gem 'pry'
   gem 'travis'
+  gem 'figaro'
 end
 
 group :development do
@@ -38,6 +39,8 @@ group :test do
   gem 'simplecov'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'orderly'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
