@@ -16,7 +16,7 @@ RSpec.describe 'new user registration' do
     it 'can be used' do
 
       visit new_user_path
-      
+
       fill_in 'user[email]', with: 'hello@example.com'
       fill_in 'user[password]', with: '1234'
       fill_in 'user[password_confirmation]', with: '1234'
@@ -36,7 +36,7 @@ RSpec.describe 'new user registration' do
 
       click_on 'Register'
 
-      expect(current_path).to eq(new_user_path)
+      expect(current_path).to eq(root_path)
       expect(page).to have_content('Passwords do not match!')
     end
   end
