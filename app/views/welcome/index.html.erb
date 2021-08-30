@@ -1,10 +1,25 @@
 <h1>Welcome to Viewing Party</h1>
-<h3>App For Scheduling Viewing Parties</h3>
-<%= form_with url: signin_path, method: :post, local: true do |form| %>
-  <%= form.label :email, "Email: " %>
-  <%= form.text_field :email %>
-  <%= form.label :password, "Password: " %>
-  <%= form.text_field :password %>
-  <%= form.submit "Sign In" %>
+
+<% if params[:registration] %>
+  <h3>Please Register for an Account</h3>
+  <%= form_with model: @user, local: true do |form| %>
+    <%= form.label :email, "Email:" %>
+    <%= form.text_field :email %>
+    <%= form.label :password, "Password:", for: 'password' %>
+    <%= form.text_field :password %>
+    <%= form.label :password_confirmation, "Password Confirmation:" %>
+    <%= form.text_field :password_confirmation %>
+    <%= form.submit "Register" %>
+  <% end %>
+  <%= link_to "Already Registered? Sign in Here", root_path %>
+<% else %>
+  <h3>App for Scheduling Viewing Parties</h3>
+  <%= form_with url: signin_path, method: :post, local: true do |form| %>
+    <%= form.label :email, "Email: " %>
+    <%= form.text_field :email %>
+    <%= form.label :password, "Password: " %>
+    <%= form.text_field :password %>
+    <%= form.submit "Sign In" %>
+  <% end %>
+  <%= link_to "New to Viewing Party? Register Here", root_path(registration: 'register') %>
 <% end %>
-<%= link_to "New Here? Register Here", new_user_path %>
