@@ -79,8 +79,24 @@ RSpec.describe 'user show page' do
 
       fill_in :email, with: user_2.email
       click_on 'Add Friend'
-      
+
       expect(page).to have_content(user_2.email)
+    end
+
+    it 'flashes error message if friend is not found' do
+      user = User.create(email: 'hello@example.com', password: '1234')
+      user_2 = User.create(email: 'goodbye@example.com', password: 'abcd')
+      user_3 = User.create(email: 'thankyou@example.com', password: '4321')\
+
+      visit root_path
+      fill_in 'email', with: 'hello@example.com'
+      fill_in 'password', with: '1234'
+      click_on 'Sign In'
+
+      fill_in :email, with: 'blank@example.com'
+      click_on 'Add Friend'
+
+      expect(page).to have_content("I'm sorry, your friend cannot be found.")
     end
   end
 end
