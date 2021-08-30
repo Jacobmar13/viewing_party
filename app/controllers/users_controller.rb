@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = 'Passwords do not match!'
-      redirect_to new_user_path
+      redirect_to root_path(registration: 'register')
     end
   end
 
