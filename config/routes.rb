@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :users
   post '/signin', to: 'sessions#create'
   resources :friends
+
+  get '/movies', to: 'movies#index'
 end
