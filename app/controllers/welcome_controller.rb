@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @user
+    @user = User.new
   end
 end
