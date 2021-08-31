@@ -32,13 +32,13 @@ RSpec.describe "Movie" do
 
   describe 'Page after user enters movie search param', :vcr do
     it 'should return movies with search param in title' do
-      fill_in :title, with: 'Pheonix'
+      fill_in :filter, with: 'Phoenix'
       click_on 'Find Movies'
 
       expect(page).to have_content("Dark Phoenix")
       expect(page).to have_content('6')
       expect(page).to have_content("Flight of the Phoenix")
-      expect(page).to have_content('5.9')
+      expect(page).to have_content('6')
       expect(current_path).to eq(movies_path)
     end
   end
