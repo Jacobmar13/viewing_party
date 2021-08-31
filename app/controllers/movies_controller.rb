@@ -1,6 +1,5 @@
 class MoviesController < ApplicationController
-  def discover
-  end
+  def discover; end
 
   def movies
     if params[:filter].nil?
