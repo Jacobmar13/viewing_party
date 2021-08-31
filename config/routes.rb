@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   get '/discover', to: 'movies#discover'
   get '/movies', to: 'movies#movies'
+  get '/movies/:movie_id', to: 'movies#show', as: 'movie'
 end
