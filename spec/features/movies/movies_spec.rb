@@ -42,4 +42,14 @@ RSpec.describe "Movie" do
       expect(current_path).to eq(movies_path)
     end
   end
+
+  describe 'Page after user clicks movie title', :vcr do
+    it 'should link to movie info page' do
+      click_on 'Find Top Rated Movies'
+
+      click_on 'Clouds'
+
+      expect(current_path).to eq(movie_path(630566))
+    end
+  end
 end
