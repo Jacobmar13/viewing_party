@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   post '/signin', to: 'sessions#create'
   resources :friends
 
-  get '/movies', to: 'movies#index'
+  get '/discover', to: 'movies#discover'
+  get '/movies', to: 'movies#movies'
 end

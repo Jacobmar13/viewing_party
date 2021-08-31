@@ -21,3 +21,6 @@
 
 # Ignore API key file
 config/application.yml
+
+# Ignore VCR cassettes
+spec/fixtures/vcr_cassettes
