@@ -1,0 +1,18 @@
+<h1><%= "Welcome #{@user.email}!" %></h1>
+<h2><%= @movie.title %></h2>
+<p><b>Vote Average: </b><%= @movie.vote_average %></p>
+<p><b>Runtime: </b><%= @movie.runtime %></p>
+<p><b>Genre(s): </b><ul><% @movie.genres.each do |genre| %>
+                <li><%= genre[:name] %></li>
+              <% end %></ul></p>
+<h3>Summary: </h3>
+  <p><%= @movie.summary %></p>
+<h3>Cast: </h3>
+<p><ul><% @movie_cast.each do |member| %>
+      <li><%= member.name %> as <%= member.character %></li>
+   <% end %></ul></p>
+<h3><%= @movie_reviews.length %> Reviews: </h3>
+<p><% @movie_reviews.each do |review| %>
+<b>Author: </b><%= review.author %><br>
+        <ul><li><%= review.content %></li></ul><br>
+      <% end %></p>
