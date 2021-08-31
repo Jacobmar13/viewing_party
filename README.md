@@ -13,6 +13,12 @@ Viewing party is an application in which users can explore movie options and cre
 2. Install gem packages: `bundle install`
 3. Setup the database: `rails db:create`
 
+## API
+- [The Movie DB API](https://developers.themoviedb.org/3/getting-started/introduction)
+- Create an account and apply for an API key
+- take that key and create a `application.yml` file in the root directory
+- name it and use figaro to encrypt your key so it cant be seen from the public and add it to `application.yml` file
+
 ## Learning Goals
 - Consume JSON APIs that require authentication
 - Build an application that requires basic authentication 
@@ -47,5 +53,7 @@ Viewing party is an application in which users can explore movie options and cre
 - [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
 - [orderly](https://github.com/jmondo/orderly)
 - [Travis Ci](https://docs.travis-ci.com/)
+- [simplecov](https://github.com/simplecov-ruby/simplecov)
+- [figaro](https://github.com/laserlemon/figaro)
 
 Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party/wireframes)
