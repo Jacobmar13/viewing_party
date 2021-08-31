@@ -1,8 +1,15 @@
-# Viewing Party
+<h1 align="center">Viewing Party</h1>
 
-This is the base repo for the [viewing party project](https://backend.turing.io/module3/projects/viewing_party) used for Turing's Backend Module 3.
+<div align="center">
 
-### About this Project
+  [![Ruby](https://img.shields.io/badge/Made%20With-Ruby-red?style=flat&logo=ruby&logoColor=red)](https://www.ruby-lang.org/en/)
+  [![Rails](https://img.shields.io/badge/Made%20With-Rails-red?style=flat&logo=ruby&logoColor=red)](https://rubyonrails.org/)
+  
+</div>
+
+> This is the base repo for the [viewing party project](https://backend.turing.io/module3/projects/viewing_party) used for Turing's Backend Module 3.
+
+## About this Project
 
 Viewing party is an application in which users can explore movie options and create a viewing party event for the user and friend's.
 [link to heroku page](https://protected-bastion-44831.herokuapp.com/)
@@ -21,11 +28,11 @@ Viewing party is an application in which users can explore movie options and cre
 
 ## Learning Goals
 - Consume JSON APIs that require authentication
-- Build an application that requires basic authentication 
-- Organize and refactor code to be more maintainable 
+- Build an application that requires basic authentication
+- Organize and refactor code to be more maintainable
 - Implement a self-referential relationship in ActiveRecord
-- Apply RuboCop’s style guide for code quality 
-- Utilize Continuous Integration using Travis CI 
+- Apply RuboCop’s style guide for code quality
+- Utilize Continuous Integration using Travis CI
 - Deploy to Heroku
 
 ## Future Goals
