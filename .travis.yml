@@ -6,6 +6,9 @@ addons:
 install:
 - bundle install
 - bundle update
+env:
+  global:
+  - secure: pk0blQXwLaCuz/C3Ztbkbtzv4iQsvDMo/DWFh4NoS+hGleiSUnBO2TEFdT9lwNK8RaKylNXj7Ayu2hCwP2xXU5vodZqVfJWX912i63WOnNogV/0kFVbMgPv+f1jIXITlOiu5MtM4NxZHCXIE/3EgROrCBxL0OC4mDIXyEwc5AEBRfEIXhBDtbK3EDbJxdLJA3P+VdTst5C/VR+AdCHCp5xNU/+S5BymXX/Yg5ojFHfuK+siteGBKfEwJ+E5GjcqvtEh4tR7nvfYJLrOoFUtFcLghP/NoXIR7B3LKtA1a8qJOAEuKszK2Mi+KKztD/X6s0pibl2a+LFrHVkKvIMXwD6KCO4FOFrqaAdOn22TOdE9OqhjuPhDXqT8PsMSN9DGlPaGmo6lrcxm79AZUHzc6SSSiXJF/gOpKzK27MF62X8p3GjhEs/1bjAhJAsibU0oGO79dGAEGxnUzFpKtddV0sTQ1oZnNkny5cya9WOjtKAczv9OPxKNnP9M4xA/AiyqKgGf6bdR2CeTgmfZoYzPwcbhic9RqIq1xSD+DV21GdXVlg9slUDb2pUAJ6szjeaq99spQxn4VxAja8Msnuh8lq56Mz75aJqNPZpfM4Y8jP5uKzt9NbK0NhwVEidpN+i6Akjjlk8gCODAl8faJ8NnC8MLWRUZBIE5vHLKrrTX+GQ8=
 script:
 - bundle exec rails db:{create,migrate} RAILS_ENV=test
 - bundle exec rspec
