@@ -6,4 +6,12 @@ class MovieFacade
       MovieDetails.new(movie)
     end
   end
+
+  def self.search_by_title(title)
+    service = MovieService.new
+    movies = service.get_api_data("3/search/movie?query=#{title}")[:results]
+    movies.map do |movie|
+      MovieDetails.new(movie)
+    end
+  end
 end
