@@ -18,6 +18,19 @@ RSpec.describe 'user show page' do
 
       expect(page).to have_content("Welcome #{user.email}!")
     end
+
+    it 'can have button to discover movies' do
+      user = User.create(email: 'hello@example.com', password: '1234')
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+      visit user_path(user.id)
+
+      expect(page).to have_button("Discover Movies")
+
+      click_on "Discover Movies"
+      expect(current_path).to eq(discover_path)
+    end
   end
 
   describe 'as authenticated user cannot visit another users show page' do
