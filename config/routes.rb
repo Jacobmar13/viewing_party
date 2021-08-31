@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root "welcome#index"
   resources :users
   post '/signin', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
   resources :friends
 
   get '/discover', to: 'movies#discover'
