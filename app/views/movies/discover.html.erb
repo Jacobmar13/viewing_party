@@ -1,0 +1,7 @@
+<h1><%= "Welcome #{@user.email}!" %></h1>
+<%= button_to "Find Top Rated Movies", movies_path,  method: :get %>
+<p><strong>OR</strong></p>
+<%= form_with url: movies_path, method: :get, local: true do |form| %>
+  <%= form.text_field :filter, label: "Search By Title" %>
+  <%= form.submit "Find Movies" %>
+<% end %>
