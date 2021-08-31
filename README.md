@@ -16,8 +16,8 @@ Viewing party is an application in which users can explore movie options and cre
 ## API
 - [The Movie DB API](https://developers.themoviedb.org/3/getting-started/introduction)
 - Create an account and apply for an API key
-- take that key and create a `application.yml` file in the root directory
-- name it and use figaro to encrypt your key so it cant be seen from the public and add it to `application.yml` file
+- Take that key and create a `application.yml` file in the root directory
+- Name it and use figaro to encrypt your key so it cant be seen from the public and add it to `application.yml` file
 
 ## Learning Goals
 - Consume JSON APIs that require authentication
