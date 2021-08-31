@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'factory_bot'
 gem 'faker'
 gem 'bcrypt', '~> 3.1.7'
+gem 'faraday'
 
 group :development, :test do
   gem 'pry'

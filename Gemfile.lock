@@ -307,6 +307,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   factory_bot
   faker
+  faraday
   figaro
   jbuilder (~> 2.5)
   launchy
