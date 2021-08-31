@@ -4,7 +4,7 @@
 
   [![Ruby](https://img.shields.io/badge/Made%20With-Ruby-red?style=flat&logo=ruby&logoColor=red)](https://www.ruby-lang.org/en/)
   [![Rails](https://img.shields.io/badge/Made%20With-Rails-red?style=flat&logo=ruby&logoColor=red)](https://rubyonrails.org/)
-  
+
 </div>
 
 > This is the base repo for the [viewing party project](https://backend.turing.io/module3/projects/viewing_party) used for Turing's Backend Module 3.
@@ -18,7 +18,7 @@ Viewing party is an application in which users can explore movie options and cre
 
 1. Fork and Clone the repo
 2. Install gem packages: `bundle install`
-3. Setup the database: `rails db:create`
+3. Setup the database: `rails db:{create,migrate}`
 
 ## API
 - [The Movie DB API](https://developers.themoviedb.org/3/getting-started/introduction)
