@@ -3,3 +3,8 @@
   <%= form.text_field :filter, label: "Search By Title" %>
   <%= form.submit "Find Movies" %>
 <% end %>
+
+<% @movies.each do |movie| %>
+  <%= movie.title %>
+  <%= movie.vote_average %>
+<% end %>
