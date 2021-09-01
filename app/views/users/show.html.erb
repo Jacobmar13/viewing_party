@@ -29,9 +29,9 @@
     <p><%= hosted.movie_title %></p>
     <p><%= hosted.date.strftime("%B %d, %Y") %></p>
     <p><%= hosted.start_time.strftime("%l:%M %p") %></p>
-    <p>Hosting</p>
+    <p>Hosting</p><br>
   <% end %>
-<% end %>
+<% end %><br>
 
 <% if current_user.guests.empty? %>
   <p>You currently have no invited viewing parties</p>
@@ -41,6 +41,6 @@
     <p><%= party.movie_title %></p>
     <p><%= party.date.strftime("%B %d, %Y") %></p>
     <p><%= party.start_time.strftime("%l:%M %p") %></p>
-    <p>Invited</p>
+    <p>Invited</p><br>
   <% end %>
 <% end %>
