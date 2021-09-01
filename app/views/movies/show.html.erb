@@ -1,4 +1,7 @@
-<h1><%= "Welcome #{@user.email}!" %></h1>
+<h1><%= "Welcome #{current_user.email}!" %></h1>
+
+<%= button_to 'Create Viewing Party for Movie', viewing_party_new_path, method: :get %>
+
 <h2><%= @movie.title %></h2>
 <p><b>Vote Average: </b><%= @movie.vote_average %></p>
 <p><b>Runtime: </b><%= @movie.runtime %></p>
