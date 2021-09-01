@@ -3,13 +3,14 @@ class ViewingPartiesController < ApplicationController
     @movie_info = MovieFacade.movie_info_by_id(session[:movie_details]['movie_id'].to_i)
   end
 
+  # rubocop:disable Metrics/MethodLength
   def create
     if party_params[:duration].to_i < session[:movie_details]['duration']
       flash[:error] = 'Duration cannot be shorter then movie runtime'
       redirect_to viewing_party_new_path
     else
       party = ViewingParty.create(party_params)
-      guests = friend_params[:friend].delete_if { |friend| friend == ""}
+      guests = friend_params[:friend].delete_if { |friend| friend == '' }
       if party.id.nil?
         flash[:error] = party.errors.full_messages
         redirect_to viewing_party_new_path
@@ -20,6 +21,7 @@ class ViewingPartiesController < ApplicationController
       end
     end
   end
+  # rubocop:enable Metrics/MethodLength
 
   private
 
@@ -29,6 +31,6 @@ class ViewingPartiesController < ApplicationController
   end
 
   def friend_params
-    params.permit({friend: []})
+    params.permit({ friend: [] })
   end
 end

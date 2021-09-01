@@ -7,7 +7,7 @@ class ViewingParty < ApplicationRecord
   validates :date, presence: true
 
   def movie_title
-    movie = MovieFacade.movie_info_by_id(self.movie_id)
+    movie = MovieFacade.movie_info_by_id(movie_id)
     movie.title
   end
 end
