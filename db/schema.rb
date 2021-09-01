@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_24_215009) do
+ActiveRecord::Schema.define(version: 2021_09_01_001447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2021_08_24_215009) do
     t.time "start_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "movie_id"
     t.index ["organizer_id"], name: "index_viewing_parties_on_organizer_id"
   end
 
