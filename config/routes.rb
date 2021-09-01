@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   get '/discover', to: 'movies#discover'
   get '/movies', to: 'movies#movies'
   get '/movies/:movie_id', to: 'movies#show', as: 'movie'
+
+  get 'viewing_party/new', to: 'viewing_parties#new'
+  get 'viewing_party/create', to: 'viewing_parties#create'
+
 end
