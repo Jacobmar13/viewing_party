@@ -1,7 +1,10 @@
-<h1><%= "Welcome #{@user.email}!" %></h1>
+<h1><%= "Welcome #{current_user.email}!" %></h1>
+
 <%= button_to "Log Out", '/logout', method: :delete %><br>
 <%= button_to "Discover Movies", discover_path, method: :get %>
+
 <h2>Friends</h2>
+
 <%= form_with url: friends_path, method: :post, local: true do |f| %>
   <%= f.label :email %>
   <%= f.text_field :email %>
@@ -14,5 +17,30 @@
 <% else %>
   <% @friends.each do |friend| %>
     <p><%= friend.email %></p>
+  <% end %>
+<% end %>
+
+<h2>Viewing Parties</h2>
+
+<% if current_user.viewing_parties.empty? %>
+  <p>You currently have no hosted viewing parties</p>
+<% else %>
+  <% current_user.viewing_parties.each do |hosted| %>
+    <p><%= hosted.movie_title %></p>
+    <p><%= hosted.date.strftime("%B %d, %Y") %></p>
+    <p><%= hosted.start_time.strftime("%l:%M %p") %></p>
+    <p>Hosting</p>
+  <% end %>
+<% end %>
+
+<% if current_user.guests.empty? %>
+  <p>You currently have no invited viewing parties</p>
+<% else %>
+  <% current_user.guests.each do |guest| %>
+    <% party = guest.find_party %>
+    <p><%= party.movie_title %></p>
+    <p><%= party.date.strftime("%B %d, %Y") %></p>
+    <p><%= party.start_time.strftime("%l:%M %p") %></p>
+    <p>Invited</p>
   <% end %>
 <% end %>
