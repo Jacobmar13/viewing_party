@@ -9,6 +9,8 @@
 
 > This is the base repo for the [viewing party project](https://backend.turing.io/module3/projects/viewing_party) used for Turing's Backend Module 3.
 
+![ViewingParty](https://user-images.githubusercontent.com/80134340/131761550-5aed8598-5133-4ba2-ba9d-611df9a32d16.png)
+
 ## About this Project
 
 Viewing party is an application in which users can explore movie options and create a viewing party event for the user and friend's.
